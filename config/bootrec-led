@@ -9,7 +9,7 @@ busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-back
 # In animaton
 b=0
 
-for i in $(seq 0 3 255)
+for i in $(/sbin/busybox seq 0 3 255)
 do
     busybox echo $i > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
     busybox echo $b > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-backlight/brightness
@@ -17,14 +17,14 @@ do
     
 done 
 
-for i in $(seq 0 3 255)
+for i in $(/sbin/busybox seq 0 3 255)
 do
     busybox echo $i > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
     busybox echo $b > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-backlight/brightness
     b=$(($b + 1))
 done
 
-for i in $(seq 0 3 255)
+for i in $(/sbin/busybox seq 0 3 255)
 do
     j=$((255 - $i))
     busybox echo $j > sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
@@ -36,7 +36,7 @@ done
 busybox echo '50' > /sys/class/timed_output/vibrator/enable
 
 # Out animaton
-for i in $(seq 0 255)
+for i in $(/sbin/busybox seq 0 255)
 do
     j=$((255 - $i))    
     busybox echo $j > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
