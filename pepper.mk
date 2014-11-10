@@ -124,6 +124,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ste.video.decoder.h264.max.lev=3.2
 
 
+# Disable JIT code cache to free up some ram when the device is running
+PRODUCT_PROPERTY_OVERRIDES += \
+  dalvik.vm.jit.codecachesize=0
+
 # Device specific proprieties
 # References: 
 # - http://source.android.com/devices/tuning.html
