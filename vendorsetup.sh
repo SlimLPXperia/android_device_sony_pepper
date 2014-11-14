@@ -1,3 +1,2 @@
-add_lunch_combo full_pepper-eng
-add_lunch_combo full_pepper-userdebug
-add_lunch_combo full_pepper-user
+add_lunch_combo slim_pepper-userdebug
+add_lunch_combo slim_pepper-eng
