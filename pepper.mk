@@ -1,6 +1,8 @@
 # Inherit from AOSP
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
+# Inherit from products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from the common montblanc definitions
 $(call inherit-product, device/sony/montblanc-common/montblanc.mk)
@@ -68,7 +70,7 @@ PRODUCT_COPY_FILES += \
 # Device specific bootlogo and charging animation
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilt/logo-480x854.rle:root/logo.rle \
-	$(LOCAL_PATH)/prebuilt/bootanimation.zip:system/media/bootanimation.zip
+	$(LOCAL_PATH)/../../../vendor/slim/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
 $(call inherit-product, $(LOCAL_PATH)/prebuilt/resources-480x854.mk)
 
 #TWRP
