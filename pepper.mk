@@ -17,7 +17,7 @@ DEVICE_PACKAGE_OVERLAYS += device/sony/pepper/overlay
 
 
 # Device specific headers
-TARGET_SPECIFIC_HEADER_PATH := device/sony/pepper/include
+TARGET_SPECIFIC_HEADER_PATH += device/sony/pepper/include
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
