@@ -11,7 +11,7 @@ TARGET_SPECIFIC_HEADER_PATH += device/sony/pepper/include
 
 
 # Kernel specific configurations
-TARGET_KERNEL_CONFIG := xperiasola_defconfig
+TARGET_KERNEL_CONFIG := pepper_defconfig
 
 # TWRP
 DEVICE_RESOLUTION := 480x854
