@@ -15,10 +15,6 @@ $(call inherit-product-if-exists, vendor/sony/pepper/pepper-vendor.mk)
 # Device specific settings overlays
 DEVICE_PACKAGE_OVERLAYS += device/sony/pepper/overlay
 
-
-# Device specific headers
-TARGET_SPECIFIC_HEADER_PATH += device/sony/pepper/include
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
