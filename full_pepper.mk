@@ -22,16 +22,13 @@
 #
 #
  
-
 # Inherit from AOSP.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
 
 # Inherit from device
 $(call inherit-product, device/sony/pepper/pepper.mk)
 
 # Set correct device information.
-PRODUCT_NAME := full_pepper
 PRODUCT_DEVICE := pepper
 PRODUCT_BRAND := Sony
 PRODUCT_MANUFACTURER := Sony

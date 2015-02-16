@@ -16,9 +16,6 @@ $(call inherit-product-if-exists, vendor/sony/pepper/pepper-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/sony/pepper/overlay
 
 
-# Device specific headers
-TARGET_SPECIFIC_HEADER_PATH += device/sony/pepper/include
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -83,15 +80,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.build.characteristics=nosdcard
 PRODUCT_PROPERTY_OVERRIDES += ro.semc.product.user_storage=emmc_only
 
 
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-        ro.nfc.on.default=false \
-        ro.nfc.se.sim.enable=true \
-        ro.nfc.se.smx.enable=false \
-        ro.nfc.icon.enable=true \
-        ro.nfc.vendor.name=nxp
-
-
 # Hardware video codecs configuration
 PRODUCT_PROPERTY_OVERRIDES += \
         ste.video.dec.mpeg4.in.size=8192 \
@@ -101,6 +89,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ste.video.decoder.max.res=720p \
         ste.video.decoder.h264.max.lev=3.2
 
+
+# Reduce background apps limit to 16 on low-tier devices
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.sys.fw.bg_apps_limit=16
 
 # Disable JIT code cache to free up some ram when the device is running
 PRODUCT_PROPERTY_OVERRIDES += \
